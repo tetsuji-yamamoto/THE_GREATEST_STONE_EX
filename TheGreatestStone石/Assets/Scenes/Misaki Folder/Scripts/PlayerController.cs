@@ -6,7 +6,7 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 20;        // “®‚­‘¬‚³
+    public float speed = 5;        // “®‚­‘¬‚³
     private Rigidbody rb;           // Rigidbody
     Rigidbody rigid3D;
     public float jumpForce = 100.0f;
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         var movejump = new Vector3(0, 1, 0);
 
         // ƒWƒƒƒ“ƒv‚·‚é
-        if (Input.GetKeyDown(KeyCode.Space) && (int)this.rigid3D.velocity.y <= 0)
+        if (Input.GetKeyDown(KeyCode.Space) && (int)this.rigid3D.velocity.y == 0)
         {
             this.rigid3D.AddForce(movejump * this.jumpForce);
         }

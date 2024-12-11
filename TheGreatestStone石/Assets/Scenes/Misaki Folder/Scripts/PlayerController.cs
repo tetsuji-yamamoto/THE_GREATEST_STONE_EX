@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         // 画面外に出た場合は最初から
         if (transform.position.y < -5)
         {
-            SceneManager.LoadScene("Misaki_Takahashi");// 再度ゲームシーンを読み込み
+            SceneManager.LoadScene("GameScene");// 再度ゲームシーンを読み込み
         }
 
     }

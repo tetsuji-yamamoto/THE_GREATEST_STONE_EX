@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!21 &-710863699731058702
+--- !u!21 &-8976310985428934871
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -8,10 +8,11 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: blackadderitc_regular SDF Material
-  m_Shader: {fileID: 4800000, guid: c8d12adcee749c344b8117cf7c7eb912, type: 3}
+  m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - UNDERLAY_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -23,35 +24,64 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 6517978176827297592}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MaskTex:
+    - _Cube:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FaceTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 6740602089763937532}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OutlineTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Ambient: 0.5
+    - _Bevel: 0.5
+    - _BevelClamp: 0
+    - _BevelOffset: 0
+    - _BevelRoundness: 0
+    - _BevelWidth: 0
+    - _BumpFace: 0
+    - _BumpOutline: 0
     - _ColorMask: 15
     - _CullMode: 0
+    - _Diffuse: 0.5
     - _FaceDilate: 0
+    - _FaceUVSpeedX: 0
+    - _FaceUVSpeedY: 0
+    - _GlowInner: 0.448
+    - _GlowOffset: 0.93
+    - _GlowOuter: 0.56
+    - _GlowPower: 0.494
     - _GradientScale: 6
-    - _MaskEdgeSoftness: 0.01
-    - _MaskInverse: 0
+    - _LightAngle: 3.1416
     - _MaskSoftnessX: 0
     - _MaskSoftnessY: 0
-    - _MaskWipeControl: 0.5
     - _OutlineSoftness: 0
+    - _OutlineUVSpeedX: 0
+    - _OutlineUVSpeedY: 0
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _Reflectivity: 10
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.45441833
+    - _ScaleRatioC: 0.5504742
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
     - _Sharpness: 0
+    - _SpecularPower: 2
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
@@ -59,8 +89,8 @@ Material:
     - _StencilWriteMask: 255
     - _TextureHeight: 512
     - _TextureWidth: 512
-    - _UnderlayDilate: 0
-    - _UnderlayOffsetX: 0
+    - _UnderlayDilate: 0.23
+    - _UnderlayOffsetX: 1
     - _UnderlayOffsetY: 0
     - _UnderlaySoftness: 0
     - _VertexOffsetX: 0
@@ -69,9 +99,14 @@ Material:
     - _WeightNormal: 0
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
+    - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MaskEdgeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GlowColor: {r: 0, g: 0, b: 0, a: 0.5}
+    - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_BuildTextureStacks: []
 --- !u!114 &11400000
@@ -83,34 +118,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 19001, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: blackadderitc_regular SDF
   m_EditorClassIdentifier: 
+  hashCode: 681996347
+  material: {fileID: -8976310985428934871}
+  materialHashCode: -530482885
   m_Version: 1.1.0
-  m_Material: {fileID: -710863699731058702}
   m_SourceFontFileGUID: 29bc644d7ff6f81468002a8be9bb7ee2
-  m_fontAssetCreationEditorSettings:
-    sourceFontFileGUID: 29bc644d7ff6f81468002a8be9bb7ee2
-    faceIndex: 0
-    pointSizeSamplingMode: 0
-    pointSize: 65
-    padding: 5
-    paddingMode: 2
-    packingMode: 0
-    atlasWidth: 512
-    atlasHeight: 512
-    characterSetSelectionMode: 0
-    characterSequence: 32 - 126, 160, 8203, 8230, 9633
-    referencedFontAssetGUID: 412f41de5774b4840921fe687eb191a8
-    referencedTextAssetGUID: 
-    fontStyle: 0
-    fontStyleModifier: 0
-    renderMode: 4165
-    includeFontFeatures: 0
+  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 29bc644d7ff6f81468002a8be9bb7ee2, type: 3}
   m_SourceFontFile: {fileID: 0}
-  m_SourceFontFilePath: 
   m_AtlasPopulationMode: 0
-  InternalDynamicOS: 0
   m_FaceInfo:
     m_FaceIndex: 0
     m_FamilyName: Blackadder ITC
@@ -1979,14 +1997,10 @@ MonoBehaviour:
     m_GlyphIndex: 171
     m_Scale: 1
   m_AtlasTextures:
-  - {fileID: 6517978176827297592}
+  - {fileID: 6740602089763937532}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_ClearDynamicDataOnBuild: 0
-  m_AtlasWidth: 512
-  m_AtlasHeight: 512
-  m_AtlasPadding: 5
-  m_AtlasRenderMode: 4165
   m_UsedGlyphRects:
   - m_X: 0
     m_Y: 0
@@ -2677,13 +2691,57 @@ MonoBehaviour:
     m_Y: 323
     m_Width: 38
     m_Height: 69
+  m_fontInfo:
+    Name: 
+    PointSize: 0
+    Scale: 0
+    CharacterCount: 0
+    LineHeight: 0
+    Baseline: 0
+    Ascender: 0
+    CapHeight: 0
+    Descender: 0
+    CenterLine: 0
+    SuperscriptOffset: 0
+    SubscriptOffset: 0
+    SubSize: 0
+    Underline: 0
+    UnderlineThickness: 0
+    strikethrough: 0
+    strikethroughThickness: 0
+    TabWidth: 0
+    Padding: 0
+    AtlasWidth: 0
+    AtlasHeight: 0
+  atlas: {fileID: 0}
+  m_AtlasWidth: 512
+  m_AtlasHeight: 512
+  m_AtlasPadding: 5
+  m_AtlasRenderMode: 4165
+  m_glyphInfoList: []
+  m_KerningTable:
+    kerningPairs: []
   m_FontFeatureTable:
-    m_MultipleSubstitutionRecords: []
-    m_LigatureSubstitutionRecords: []
     m_GlyphPairAdjustmentRecords: []
-    m_MarkToBaseAdjustmentRecords: []
-    m_MarkToMarkAdjustmentRecords: []
+  fallbackFontAssets: []
   m_FallbackFontAssetTable: []
+  m_CreationSettings:
+    sourceFontFileName: 
+    sourceFontFileGUID: 29bc644d7ff6f81468002a8be9bb7ee2
+    pointSizeSamplingMode: 0
+    pointSize: 65
+    padding: 5
+    packingMode: 0
+    atlasWidth: 512
+    atlasHeight: 512
+    characterSetSelectionMode: 0
+    characterSequence: 32 - 126, 160, 8203, 8230, 9633
+    referencedFontAssetGUID: 
+    referencedTextAssetGUID: 
+    fontStyle: 0
+    fontStyleModifier: 0
+    renderMode: 4165
+    includeFontFeatures: 0
   m_FontWeightTable:
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}
@@ -2705,13 +2763,14 @@ MonoBehaviour:
     italicTypeface: {fileID: 0}
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}
-  m_RegularStyleWeight: 0
-  m_RegularStyleSpacing: 0
-  m_BoldStyleWeight: 0.75
-  m_BoldStyleSpacing: 7
-  m_ItalicStyleSlant: 35
-  m_TabMultiple: 10
---- !u!28 &6517978176827297592
+  fontWeights: []
+  normalStyle: 0
+  normalSpacingOffset: 0
+  boldStyle: 0.75
+  boldSpacing: 7
+  italicStyle: 35
+  tabSize: 10
+--- !u!28 &6740602089763937532
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -9,6 +9,17 @@ public class TimeMa : MonoBehaviour
     public float Timer = 0.0f;       // 時間を保存
     public GameObject player;        // プレイヤーを格納する変数
     public GameObject text;          // テキストを格納する変数
+    private bool isGoal = false;     // ゴールしたかどうか判定する
+
+    void OnTriggerEnter(Collider collision)
+    {
+        // 当たってきたオブジェクトの名前がプレイヤーの名前と同じとき
+        if (collision.name == player.name)
+        {
+            // ゴール判定をtrueにする
+            isGoal = true;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +31,7 @@ public class TimeMa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if ()
+        if (isGoal==true)
         {
             return;// ここでupdateメソッドを終わらせる
         }
